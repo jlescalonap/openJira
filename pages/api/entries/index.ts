@@ -18,6 +18,9 @@ export default function handler(
     
     case 'POST':
       return postEntry( req, res );
+    
+    case 'DELETE':
+      return deleteEntry( req, res );
 
 
     default:
@@ -58,4 +61,8 @@ const postEntry = async ( req: NextApiRequest, res: NextApiResponse<Data> ) => {
     return res.status(500).json({ message: 'Algo salio mal, revisar consola del servidor.' });
   }
 
+}
+
+const deleteEntry = async ( req: NextApiRequest, res: NextApiResponse<Data> ) => {
+  console.log( req );
 }
